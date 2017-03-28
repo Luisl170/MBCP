@@ -324,6 +324,7 @@ public class MBCP extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("algo nuevo");
     }//GEN-LAST:event_BtBuildActionPerformed
 
     private void BtSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSendActionPerformed
