@@ -23,7 +23,6 @@ public class Receiver extends Thread{
             while(true){
                 DatagramPacket request = new DatagramPacket(buffer,buffer.length);
                 receiverSocket.receive(request);
-                mbcp.MessageReceived(new String(request.getData()));
             }
         } catch (SocketException ex) {
             Logger.getLogger(Receiver.class.getName()).log(Level.SEVERE, null, ex);

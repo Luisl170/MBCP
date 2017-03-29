@@ -21,7 +21,7 @@ public class MBCP extends javax.swing.JFrame {
     private int[] VectorTime;
     private Map<Integer, Integer> CI;
     private Map<Integer, m> messages;
-    DefaultListModel lMessages;
+    private DefaultListModel listMessages;
     
     
     public MBCP() {
@@ -35,14 +35,8 @@ public class MBCP extends javax.swing.JFrame {
         CI.put(2, 1);
         CI.put(3, 1);
         CI.put(4, 1);
-        CI.put(5, 1);
-        messages = new HashMap<>(); lMessages = new DefaultListModel(); 
-        jListMessages.setModel(lMessages);
-        
-    }
-    
-    public void MessageReceived(String message){
-        JOptionPane.showMessageDialog(this, message);
+        messages = new HashMap<>(); listMessages = new DefaultListModel(); 
+        jListMessages.setModel(listMessages);
     }
 
     @SuppressWarnings("unchecked")
@@ -64,11 +58,10 @@ public class MBCP extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         BtSend = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        jCBP2 = new javax.swing.JCheckBox();
+        jCBP3 = new javax.swing.JCheckBox();
+        jCBP4 = new javax.swing.JCheckBox();
+        jCBP5 = new javax.swing.JCheckBox();
         jPanel5 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -117,7 +110,7 @@ public class MBCP extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(lbCI))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Nuevos mensajes"));
@@ -159,12 +152,13 @@ public class MBCP extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lbHm))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(BtBuild, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -179,7 +173,7 @@ public class MBCP extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 175, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Envio"));
@@ -195,16 +189,13 @@ public class MBCP extends javax.swing.JFrame {
         jButton5.setText("Retransmitir");
         jButton5.setPreferredSize(new java.awt.Dimension(97, 34));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sin mensajes" }));
-        jComboBox1.setPreferredSize(new java.awt.Dimension(96, 34));
+        jCBP2.setText("Proceso 2");
 
-        jCheckBox1.setText("Proceso 2");
+        jCBP3.setText("Proceso 3");
 
-        jCheckBox2.setText("Proceso 3");
+        jCBP4.setText("Proceso 4");
 
-        jCheckBox3.setText("Proceso 4");
-
-        jCheckBox4.setText("Proceso 5");
+        jCBP5.setText("Proceso 5");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -212,16 +203,14 @@ public class MBCP extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jCheckBox1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCheckBox4)
+                .addComponent(jCBP2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addComponent(jCBP3)
+                .addGap(53, 53, 53)
+                .addComponent(jCBP4)
+                .addGap(43, 43, 43)
+                .addComponent(jCBP5)
+                .addGap(35, 35, 35)
                 .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BtSend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,22 +219,15 @@ public class MBCP extends javax.swing.JFrame {
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtSend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4))
-                .addContainerGap())
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BtSend, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCBP5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCBP4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jCBP3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCBP2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Mensajes recibidos"));
@@ -258,7 +240,7 @@ public class MBCP extends javax.swing.JFrame {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 159, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,14 +268,14 @@ public class MBCP extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, 0)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -302,33 +284,60 @@ public class MBCP extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BtBuildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtBuildActionPerformed
-        try {
-            DatagramSocket senderSocket = new DatagramSocket();
-            InetAddress senderAddress = InetAddress.getByName("localhost");
+        if (messages.isEmpty() || (messages.get(VectorTime[i-1]).getSend(0) & messages.get(VectorTime[i-1]).getSend(1) & messages.get(VectorTime[i-1]).getSend(2) & messages.get(VectorTime[i-1]).getSend(3) & messages.get(VectorTime[i-1]).getSend(4))){
             VectorTime[i-1] += 1;
             lbVectorTime.setText("("+VectorTime[0]+","+VectorTime[1]+","+VectorTime[2]+","+VectorTime[3]+","+VectorTime[4]+")");
-            if(CI.size() == 0)
-                lbHm.setText("Vacio");
             Map<Integer, Integer> Hm = CI;
             messages.put(messages.size()+1, new m(i, VectorTime[i-1], "Prueba", Hm));
-            String m = messages.get(VectorTime[i-1]).getI()+" "+messages.get(VectorTime[i-1]).getTi()+" "+messages.get(VectorTime[i-1]).getMessage() + "{";
-            for(Map.Entry<Integer, Integer> hm : Hm.entrySet()){m += "(" + hm.getKey() + "," + hm.getValue() +  ")";}
+            String m = messages.get(VectorTime[i-1]).getI()+", "+messages.get(VectorTime[i-1]).getTi()+", "+messages.get(VectorTime[i-1]).getMessage() + ", { ";
+            for(Map.Entry<Integer, Integer> hm : Hm.entrySet()){
+                m += "(" + hm.getKey() + "," + hm.getValue() +  ") ";
+            }
             m += "}";
-            DatagramPacket request = new DatagramPacket(m.getBytes(), m.length(),senderAddress, 6789);
-            senderSocket.send(request);
-            lMessages.addElement(m);
-        } catch (SocketException ex) {
-            Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
+            listMessages.addElement(m);
+            CI.clear();
+        }else{
+            JOptionPane.showMessageDialog(this, "Envie el mensaje actual a todos los procesos antes de construir uno nuevo.");
         }
-        System.out.println("algo nuevo");
     }//GEN-LAST:event_BtBuildActionPerformed
 
     private void BtSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtSendActionPerformed
-        
+        if(!messages.isEmpty()){
+            try {
+                DatagramSocket senderSocket = new DatagramSocket();
+                InetAddress senderAddress = InetAddress.getByName("localhost");
+                String m = messages.get(VectorTime[i-1]).getI()+", "+messages.get(VectorTime[i-1]).getTi()+", "+messages.get(VectorTime[i-1]).getMessage() + ", { ";
+                for(Map.Entry<Integer, Integer> hm : messages.get(VectorTime[i-1]).getHm().entrySet()){
+                    m += "(" + hm.getKey() + "," + hm.getValue() +  ") ";
+                }
+                m += "}";
+                if (jCBP2.isSelected()){
+                    DatagramPacket request = new DatagramPacket(m.getBytes(), m.length(),senderAddress, 6790);
+                    senderSocket.send(request);
+                    messages.get(VectorTime[i-1]).setSend(1);
+                }
+                if (jCBP3.isSelected()){
+
+                }
+                if (jCBP4.isSelected()){
+
+                }
+                if (jCBP5.isSelected()){
+
+                }
+                if(!jCBP2.isSelected() & !jCBP3.isSelected() & !jCBP4.isSelected() & !jCBP5.isSelected()){
+                    JOptionPane.showMessageDialog(this, "Selecciona el o los procesos a los que deseas enviar el mensaje");
+                }
+            } catch (SocketException ex) {
+                Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnknownHostException ex) {
+                Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(MBCP.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Construye un mensaje primero");
+        }
     }//GEN-LAST:event_BtSendActionPerformed
 
     public static void main(String args[]) {
@@ -367,11 +376,10 @@ public class MBCP extends javax.swing.JFrame {
     private javax.swing.JButton BtBuild;
     private javax.swing.JButton BtSend;
     private javax.swing.JButton jButton5;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JCheckBox jCBP2;
+    private javax.swing.JCheckBox jCBP3;
+    private javax.swing.JCheckBox jCBP4;
+    private javax.swing.JCheckBox jCBP5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

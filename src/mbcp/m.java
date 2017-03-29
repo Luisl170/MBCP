@@ -8,14 +8,24 @@ public class m {
     private int ti;
     private String message;
     public Map<Integer, Integer> Hm;
+    public boolean[] send;
 
     public m(int i, int ti, String message, Map<Integer, Integer> Hm) {
         this.i = i;
         this.ti = ti;
         this.message = message;
         this.Hm = Hm;
+        send = new boolean[] {false,false,false,false,false};
     }
 
+    public boolean getSend(int i) {
+        return send[i];
+    }
+
+    public void setSend(int i){
+        send[i] = true;
+    }
+    
     public int getI() {
         return i;
     }
